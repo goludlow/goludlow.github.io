@@ -1,22 +1,27 @@
 # Site settings
-title: Ice Silkworm  Blog
+title: Ice Silkworm Blog
 SEOTitle: 冰蚕 | Ice Silkworm Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: huipengdu@foxmail.com
 description: ""
 keyword: ""
 url: "https://goludlow.github.io/"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
+post:
+  author: Ice Silkworm
+
+# Publish posts or collection documents with a future date.
+future: true
 
 # SNS settings
-RSS: false
+RSS: true
 #weibo_username:     goludlow
-#zhihu_username:     goludlow
 github_username:    goludlow
-#twitter_username:  goludlow
+#twitter_username:   goludlow
 #facebook_username:  goludlow
+#linkedin_username:  firstname-lastname-idxxxx
 
 
 
@@ -25,13 +30,17 @@ github_username:    goludlow
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+# If you have timezone issue (e.g. #68) in China, uncomment to use this:
+#timezone: CN  
 
 
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
 plugins: [jekyll-paginate]
 
 
@@ -43,26 +52,30 @@ plugins: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-  
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+#disqus_username: TODO
 
-# Duoshuo settings
-#duoshuo_username: huxblog
-# Share component is depend on Comment so we can NOT use share only.
-#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
+# Netease settings
+#netease_comment: false
 
 
 
 # Analytics settings
-# Baidu Analytics
-#ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
 # Google Analytics
-#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-#ga_domain: huangxuan.me
+# ga_track_id: TODO            # Format: UA-xxxxxx-xx
+# ga_domain: TODO
 
 
 
@@ -76,6 +89,17 @@ sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in bot
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
 
 
 
